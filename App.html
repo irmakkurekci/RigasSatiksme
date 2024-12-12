@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page - Rīgas Satiksme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to top, 
+                #070642 0%, 
+                #090854 5%, 
+                #0c0962 10%, 
+                #0c0a6b 20%, 
+                #0e0b7c 30%, 
+                #100e8d 40%, 
+                #110f97 50%, 
+                #120fa1 60%,
+				#110f97 70%,
+				#100e8d 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120vh;
+            margin: 0;
+			
+			
+        }
+        .signup-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 600px;
+			margin: 0 auto;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="button"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"], input[type="button"] {
+            background-color: #203c94;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #172b6d;
+        }
+        header {
+            width: 100%;
+            padding: 20px;
+            font-size: 24px;
+            background-color: #100e8d;
+            color: white;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+		#image{
+		display: flex;
+		flex-direction: row;
+		
+		}
+    </style>
+</head>
+<body>
+    <header>
+	<div id="image">
+	<img src="img/images.png" alt="satiksme Logo" width="15%" height="15%">
+        <h1>Rīgas Satiksme</h1>
+		</div>
+    </header>
+    <div class="signup-form" style="margin-top: 60px;"> <!-- Added margin to account for fixed header -->
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Your password" required>
+
+            <input type="submit" value="Sign Up">
+            <input type="button" value="Already Signed Up? Sign In" onclick="location.href='signin.html';">
+        </form>
+  </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Collecting the user input.
+            var firstName = document.getElementById('fname').value;
+            var lastName = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Storing the user input in localStorage.
+            localStorage.setItem('firstName', firstName);
+            localStorage.setItem('lastName', lastName);
+            localStorage.setItem('email', email);
+            localStorage.setItem('password', password);  // Note: Never store plain passwords in production.
+
+            // Confirmation and redirecting to sign-in page.
+            alert('Sign up successful. Please sign in.');
+            window.location.href = 'signin.html';  // Redirect to sign-in page.
+        });
+    </script>
+</body>
+</html>

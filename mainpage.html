@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page - Rīgas Satiksme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             background: linear-gradient(to top, 
+                #070642 0%, 
+                #090854 5%, 
+                #0c0962 10%, 
+                #0c0a6b 20%, 
+                #0e0b7c 30%, 
+                #100e8d 40%, 
+                #110f97 50%, 
+                #120fa1 60%,
+				#110f97 70%,
+				#100e8d 100%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color:#110f97;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            width: 100%;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+        }
+        .button {
+            background-color: #27408B; /* Dark blue background for buttons */
+            color: white;
+            border: none;
+            border-radius: 25px; /* Rounded corners like the images */
+            padding: 15px 30px;
+            margin: 10px;
+            width: 80%;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #1e4a97;
+        }
+        .green-button {
+            background-color: #b8dc5c; 
+			border-radius: 25px;
+			width: 80%;
+			padding: 15px 30px;
+			margin: 10px;
+			font-size: 16px;
+            transition: background-color 0.3s;
+			
+        }
+        .green-button:hover {
+            background-color: #dbf792;
+        }
+        footer {
+            background-color: #070642;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            width: 100%;
+        }
+		#image{
+		display: flex;
+		flex-direction: row;
+		
+		}
+    </style>
+</head>
+<body>
+    <header>
+        <div id="image">
+	<img src="img/images.png" alt="satiksme Logo" width="15%" height="15%">
+        <h1>Rīgas Satiksme</h1>
+		</div>
+    </header>
+    <main>
+        <button class="button">Register a Trip</button>
+        <button class="button">Ticket for Control</button>
+        <button class="button">My Tickets (0)</button>
+        <button class="button">Routes and Schedules</button>
+        <button class="green-button" id="13">Buy a Ticket</button>
+
+    </main>
+    <footer>
+        Informative phone ☎ 20361862<br>
+        Version 1.3.67
+    </footer>
+	<script>
+       document.getElementById('13').addEventListener('click', function() {
+    window.location.href = 'buyticketp.html'; // Make sure the file name matches
+});
+
+    </script>
+</body>
+</html>
